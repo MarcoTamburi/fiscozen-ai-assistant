@@ -1,0 +1,11 @@
+services:
+  fiscozen-ai-assistant:
+    build: .
+    container_name: fiscozen-ai-assistant
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data:ro
+    restart: unless-stopped
